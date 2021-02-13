@@ -128,5 +128,26 @@
                 Content="Choose" />
         </StackPanel>
 
+        <Button
+            x:Name="button5"
+            Grid.Row="6"
+            Grid.Column="2"
+            Margin="15"
+            Content="About" />
+
+        <Rectangle
+            x:Name="rectangle1"
+            Grid.Row="3"
+            Grid.RowSpan="3"
+            Grid.Column="1"
+            Grid.ColumnSpan="2"
+            Width="580"
+            Height="210"
+            Margin="-30,0,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Stroke="Black"
+            StrokeThickness="3" />
+
     </Grid>
 </Window>

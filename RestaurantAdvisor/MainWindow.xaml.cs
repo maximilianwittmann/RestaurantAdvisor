@@ -27,22 +27,26 @@ namespace RestaurantAdvisor
 
         private void button1_Click(object sender, RoutedEventArgs e)
         {
-
+            SelectRestaurant selectRestaurant = new SelectRestaurant();
+            selectRestaurant.Show();
         }
 
         private void button2_Click(object sender, RoutedEventArgs e)
         {
-
+            AddRestaurant addRestaurant = new AddRestaurant();
+            addRestaurant.Show();
         }
 
         private void button3_Click(object sender, RoutedEventArgs e)
         {
-
+            DeleteRestaurant deleteRestaurant = new DeleteRestaurant();
+            deleteRestaurant.Show();
         }
 
         private void button4_Click(object sender, RoutedEventArgs e)
         {
-
+            OtherAction otherAction = new OtherAction();
+            otherAction.Show();
         }
     }
 }
