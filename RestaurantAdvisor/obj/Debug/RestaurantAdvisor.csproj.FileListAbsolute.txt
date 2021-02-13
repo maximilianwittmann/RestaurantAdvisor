@@ -1,0 +1,15 @@
+C:\Users\Admin\source\repos\maximilianwittmann\RestaurantAdvisor\RestaurantAdvisor\bin\Debug\RestaurantAdvisor.exe.config
+C:\Users\Admin\source\repos\maximilianwittmann\RestaurantAdvisor\RestaurantAdvisor\bin\Debug\RestaurantAdvisor.exe
+C:\Users\Admin\source\repos\maximilianwittmann\RestaurantAdvisor\RestaurantAdvisor\bin\Debug\RestaurantAdvisor.pdb
+C:\Users\Admin\source\repos\maximilianwittmann\RestaurantAdvisor\RestaurantAdvisor\obj\Debug\RestaurantAdvisor.csprojAssemblyReference.cache
+C:\Users\Admin\source\repos\maximilianwittmann\RestaurantAdvisor\RestaurantAdvisor\obj\Debug\MainWindow.g.cs
+C:\Users\Admin\source\repos\maximilianwittmann\RestaurantAdvisor\RestaurantAdvisor\obj\Debug\App.g.cs
+C:\Users\Admin\source\repos\maximilianwittmann\RestaurantAdvisor\RestaurantAdvisor\obj\Debug\RestaurantAdvisor_MarkupCompile.cache
+C:\Users\Admin\source\repos\maximilianwittmann\RestaurantAdvisor\RestaurantAdvisor\obj\Debug\RestaurantAdvisor_MarkupCompile.lref
+C:\Users\Admin\source\repos\maximilianwittmann\RestaurantAdvisor\RestaurantAdvisor\obj\Debug\MainWindow.baml
+C:\Users\Admin\source\repos\maximilianwittmann\RestaurantAdvisor\RestaurantAdvisor\obj\Debug\RestaurantAdvisor.g.resources
+C:\Users\Admin\source\repos\maximilianwittmann\RestaurantAdvisor\RestaurantAdvisor\obj\Debug\RestaurantAdvisor.Properties.Resources.resources
+C:\Users\Admin\source\repos\maximilianwittmann\RestaurantAdvisor\RestaurantAdvisor\obj\Debug\RestaurantAdvisor.csproj.GenerateResource.cache
+C:\Users\Admin\source\repos\maximilianwittmann\RestaurantAdvisor\RestaurantAdvisor\obj\Debug\RestaurantAdvisor.csproj.CoreCompileInputs.cache
+C:\Users\Admin\source\repos\maximilianwittmann\RestaurantAdvisor\RestaurantAdvisor\obj\Debug\RestaurantAdvisor.exe
+C:\Users\Admin\source\repos\maximilianwittmann\RestaurantAdvisor\RestaurantAdvisor\obj\Debug\RestaurantAdvisor.pdb
