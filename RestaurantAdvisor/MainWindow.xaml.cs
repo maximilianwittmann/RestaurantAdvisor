@@ -48,5 +48,17 @@ namespace RestaurantAdvisor
             OtherAction otherAction = new OtherAction();
             otherAction.Show();
         }
+
+        private void menuItem2Item2_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("You will be transferred to the Delete Page.");
+            goToDelete();     
+        }
+
+        private void goToDelete()
+        {
+            DeleteRestaurant deleteRestaurant = new DeleteRestaurant();
+            deleteRestaurant.Show();
+        }
     }
 }

@@ -25,6 +25,62 @@
             <ColumnDefinition Width="1*" />
         </Grid.ColumnDefinitions>
 
+        <DockPanel>
+            <Menu Background="White" DockPanel.Dock="Left">
+                <MenuItem
+                    x:Name="menuItem1"
+                    Background="White"
+                    Header="File">
+                    <MenuItem
+                        x:Name="menuItem1Item1"
+                        Background="Black"
+                        Foreground="White"
+                        Header="New" />
+                    <MenuItem
+                        x:Name="menuItem1Item2"
+                        Background="Black"
+                        Foreground="White"
+                        Header="Open" />
+                    <MenuItem
+                        x:Name="menuItem1Item3"
+                        Background="Black"
+                        Foreground="White"
+                        Header="Save" />
+                    <Separator />
+                    <MenuItem
+                        x:Name="menuItem1Item4"
+                        FontWeight="Bold"
+                        Header="Exit App" />
+                </MenuItem>
+                <MenuItem x:Name="menuItem2" Header="Tools">
+                    <MenuItem
+                        x:Name="menuItem2Item1"
+                        Background="Green"
+                        Header="Manage users">
+                        <MenuItem.Icon>
+                            <Image Width="20" Source="./Images/add.jpg" />
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem
+                        x:Name="menuItem2Item2"
+                        Click="menuItem2Item2_Click"
+                        Header="ToDeletePage" />
+                </MenuItem>
+                <MenuItem Background="White">
+                    <MenuItem.Icon>
+                        <Image Source="./Images/select.jpg" />
+                    </MenuItem.Icon>
+                    <MenuItem Header="Save" />
+                    <MenuItem Header="Delete" />
+                    <MenuItem
+                        Header="Show"
+                        IsCheckable="True"
+                        IsChecked="True" />
+                </MenuItem>
+            </Menu>
+        </DockPanel>
+
+
         <TextBlock
             x:Name="textBlock1"
             Grid.Row="0"
