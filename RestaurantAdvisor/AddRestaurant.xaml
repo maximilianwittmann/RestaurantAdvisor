@@ -10,6 +10,181 @@
     Height="450"
     mc:Ignorable="d">
     <Grid>
-        <TextBlock x:Name="textBlock1" Text="Add Restaurant" />
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="2*" />
+            <ColumnDefinition Width="1*" />
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50" />
+            <RowDefinition Height="50" />
+            <RowDefinition Height="50" />
+            <RowDefinition Height="50" />
+            <RowDefinition Height="50" />
+            <RowDefinition Height="50" />
+            <RowDefinition Height="20" />
+            <RowDefinition Height="75" />
+            <RowDefinition Height="20" />
+        </Grid.RowDefinitions>
+
+        <TextBlock
+            x:Name="textBlock1"
+            Grid.Row="0"
+            Grid.Column="1"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            FontSize="25"
+            FontWeight="Bold"
+            Foreground="Orange"
+            Text="Add a new restaurant" />
+
+        <Image
+            x:Name="image1"
+            Grid.Row="0"
+            Grid.RowSpan="2"
+            Grid.Column="2"
+            Source="./Images/add.jpg" />
+
+        <StackPanel
+            x:Name="stackPanel1"
+            Grid.Row="2"
+            Grid.RowSpan="4"
+            Grid.Column="0"
+            Background="LightBlue"
+            Orientation="Vertical">
+            <Label
+                x:Name="label1"
+                Width="170"
+                Height="30"
+                Margin="0,10"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                HorizontalContentAlignment="Center"
+                Background="White"
+                Content="Name of Restaurant"
+                FontStyle="Italic"
+                FontWeight="Bold" />
+            <Label
+                x:Name="label2"
+                Width="170"
+                Height="30"
+                Margin="0,10"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                HorizontalContentAlignment="Center"
+                Background="White"
+                Content="Address of Restaurant"
+                FontStyle="Italic"
+                FontWeight="Bold" />
+            <Label
+                x:Name="label3"
+                Width="170"
+                Height="30"
+                Margin="0,10"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                HorizontalContentAlignment="Center"
+                Background="White"
+                Content="Homepage Link"
+                FontStyle="Italic"
+                FontWeight="Bold" />
+            <Label
+                x:Name="label4"
+                Width="170"
+                Height="30"
+                Margin="0,10"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                HorizontalContentAlignment="Center"
+                Background="White"
+                Content="Nationality of Restaurant"
+                FontStyle="Italic"
+                FontWeight="Bold" />
+        </StackPanel>
+
+        <StackPanel
+            x:Name="stackPanel2"
+            Grid.Row="2"
+            Grid.RowSpan="4"
+            Grid.Column="1">
+            <TextBox
+                x:Name="textBox1"
+                Width="380"
+                Margin="0,10"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                HorizontalContentAlignment="Center"
+                FontSize="20"
+                Text="Text" />
+            <TextBox
+                x:Name="textBox2"
+                Width="380"
+                Margin="0,10"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                HorizontalContentAlignment="Center"
+                FontSize="20"
+                Text="Text" />
+            <TextBox
+                x:Name="textBox3"
+                Width="380"
+                Margin="0,10"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                HorizontalContentAlignment="Center"
+                FontSize="20"
+                Text="Text" />
+            <TextBox
+                x:Name="textBox4"
+                Width="380"
+                Margin="0,10"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                HorizontalContentAlignment="Center"
+                FontSize="20"
+                Text="Text" />
+        </StackPanel>
+
+        <Button
+            x:Name="button1"
+            Grid.Row="7"
+            Grid.Column="1"
+            Background="LightGreen"
+            BorderBrush="DarkGreen"
+            BorderThickness="2"
+            Click="button1_Click"
+            Content="Add to Database"
+            FontSize="30"
+            FontWeight="ExtraBlack"
+            Foreground="Black" />
+
+        <Button
+            x:Name="button2"
+            Grid.Row="7"
+            Grid.Column="0"
+            Width="160"
+            Background="#FFE4CECE"
+            BorderBrush="Black"
+            BorderThickness="2"
+            Click="button2_Click"
+            Content="View all entries"
+            FontSize="20"
+            FontWeight="ExtraBlack"
+            Foreground="Black" />
+
+        <Button
+            x:Name="button3"
+            Grid.Row="8"
+            Grid.Column="2"
+            Background="White"
+            BorderBrush="Black"
+            BorderThickness="0"
+            Click="button1_Click"
+            Content="Main Page"
+            FontSize="10"
+            FontWeight="ExtraBlack"
+            Foreground="Black" />
+
     </Grid>
 </Window>

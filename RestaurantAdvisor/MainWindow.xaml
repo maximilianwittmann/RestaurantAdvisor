@@ -70,7 +70,7 @@
                     <MenuItem.Icon>
                         <Image Source="./Images/select.jpg" />
                     </MenuItem.Icon>
-                    <MenuItem Header="Save" />
+                    <MenuItem Header="_Save" InputGestureText="Ctrl + S" />
                     <MenuItem Header="Delete" />
                     <MenuItem
                         Header="Show"
