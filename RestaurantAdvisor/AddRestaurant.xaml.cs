@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,6 +24,8 @@ namespace RestaurantAdvisor
         private string addressOfRestaurant;
         private string homepageOfRestaurant;
         private string nationalityOfRestaurant;
+
+        bool table_exists = false;
 
         public string NameOfRestaurant
         {
@@ -100,13 +103,59 @@ namespace RestaurantAdvisor
 
         }
 
+        private bool check_if_table_exists()
+        {
+            if (table_exists == false)
+            {
+                return false;
+            } else
+            {
+                createNewTable("New Table");
+                return true;
+            }
+        }
+
+        private void createNewTable(string newTableName)
+        {
+            SqlConnection conn = connectToSQLDatabase();
+            string tableName = "dbo." + newTableName;
+            string sql = "CREATE TABLE tableName (" +
+                "[Id] INT NOT NULL PRIMARY KEY IDENTITY, [Restaurant Name] NVARCHAR(50)" +
+                "[Restaurant Address] NVARCHAR(50), [Restaurant Homepage] NVARCHAR(50), [Restaurant Nationality] NVARCHAR(50)"
+
+        }
         private void addToSqlTable(string restaurantName, string restaurantAddress, string restaurantHomepage, string restaurantNationality)
         {
-            MessageBox.Show("We transferred the following data to the table: ");
+            check_if_table_exists();
+            connectToDatabase();
+            addEntries();
+            closeDatabase();
+            /* Review of Dictionary, Lists, and MessageBoxes plus abbreviations/shortcuts 
+             * MessageBox.Show("We transferred the following data to the table: ");
             MessageBox.Show($"Name: {restaurantName} \n" +
                             $"Address: {restaurantAddress} \n " + 
                             $"Homepage: {restaurantHomepage} \n" + 
                             $"Nationality: {restaurantNationality}");
+            // ToDo: Continue here and create functionality
+            MessageBox.Show("Now I'll present you the entries of the list.");
+            List<string> list = new List<string>();
+            list.Add(restaurantName);
+            list.Add(restaurantAddress);
+            list.Add(restaurantHomepage);
+            list.Add(restaurantNationality);
+            foreach(string detail in list)
+            {
+                MessageBox.Show(detail);
+            }
+            MessageBox.Show("Now we'll move on to Dictionaries: ");
+            Dictionary<string, string> newDict = new Dictionary<string, string>();
+            newDict.Add("Movie A", "Romance");
+            newDict.Add("Movie B", "Lyrics");
+            foreach(KeyValuePair<string, string> item in newDict)
+            {
+                MessageBox.Show($"{item.Key}: {item.Value}");
+            }
+            */
         }
     }
 }
