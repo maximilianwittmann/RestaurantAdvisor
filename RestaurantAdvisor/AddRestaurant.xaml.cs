@@ -103,34 +103,69 @@ namespace RestaurantAdvisor
 
         }
 
+        private SqlConnection connectToSQLDatabase()
+        {
+            SqlConnection conn = new SqlConnection("Server=(LocalDB)\\MSSQLLocalDB;Integrated Security=true;AttachDbFileName=C:\\Users\\Admin\\source\\repos\\maximilianwittmann\\RestaurantAdvisor\\RestaurantAdvisor\\Database1.mdf");
+            conn.Open();
+            MessageBox.Show("CONNECTED to Database");
+            return conn;
+        }
+
+        private void closeSQLDatabaseConnection(SqlConnection conn)
+        {
+            conn.Close();
+            MessageBox.Show("Database Connection was closed.");
+        }
+
         private bool check_if_table_exists()
         {
             if (table_exists == false)
             {
+                createNewTable("NewTable");
                 return false;
             } else
             {
-                createNewTable("New Table");
                 return true;
             }
         }
 
-        private void createNewTable(string newTableName)
+        private bool createNewTable(string newTableName)
         {
             SqlConnection conn = connectToSQLDatabase();
             string tableName = "dbo." + newTableName;
-            string sql = "CREATE TABLE tableName (" +
-                "[Id] INT NOT NULL PRIMARY KEY IDENTITY, [Restaurant Name] NVARCHAR(50)" +
-                "[Restaurant Address] NVARCHAR(50), [Restaurant Homepage] NVARCHAR(50), [Restaurant Nationality] NVARCHAR(50)"
-
+            string sql = "CREATE TABLE NewTable (" +
+                "[Id] INT NOT NULL PRIMARY KEY IDENTITY, [Restaurant_Name] NVARCHAR(50), " +
+                "[Restaurant_Address] NVARCHAR(50), [Restaurant_Homepage] NVARCHAR(50), " +
+                "[Restaurant_Nationality] NVARCHAR(50))";
+            SqlCommand cmd = new SqlCommand(sql, conn);
+            // cmd.Parameters.Add(new SqlParameter("@tableName", tableName));
+            cmd.ExecuteNonQuery();
+            closeSQLDatabaseConnection(conn);
+            MessageBox.Show($"New Table with name {tableName} has been created");
+            table_exists = true;
+            return table_exists;
+            // ToDo: Prevent that two tables called "NewTable" are in the database.
+            // Populate New Table and read values
         }
         private void addToSqlTable(string restaurantName, string restaurantAddress, string restaurantHomepage, string restaurantNationality)
         {
             check_if_table_exists();
-            connectToDatabase();
-            addEntries();
-            closeDatabase();
-            /* Review of Dictionary, Lists, and MessageBoxes plus abbreviations/shortcuts 
+            SqlConnection conn = connectToSQLDatabase();
+
+            string sql = "INSERT INTO NewTable VALUES (@name, @address, @homepage, @nationality)";
+            SqlCommand cmd = new SqlCommand(sql, conn);
+            cmd.Parameters.Add(new SqlParameter("@name", restaurantName));
+            cmd.Parameters.Add(new SqlParameter("@address", restaurantAddress));
+            cmd.Parameters.Add(new SqlParameter("@homepage", restaurantHomepage));
+            cmd.Parameters.Add(new SqlParameter("@nationality", restaurantNationality));
+            SqlDataReader reader = cmd.ExecuteReader();
+            reader.Close();
+
+            closeSQLDatabaseConnection(conn);
+        }
+    }
+
+    /* Review of Dictionary, Lists, and MessageBoxes plus abbreviations/shortcuts 
              * MessageBox.Show("We transferred the following data to the table: ");
             MessageBox.Show($"Name: {restaurantName} \n" +
                             $"Address: {restaurantAddress} \n " + 
@@ -156,6 +191,4 @@ namespace RestaurantAdvisor
                 MessageBox.Show($"{item.Key}: {item.Value}");
             }
             */
-        }
-    }
 }
