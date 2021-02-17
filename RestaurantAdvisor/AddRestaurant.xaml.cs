@@ -121,9 +121,10 @@ namespace RestaurantAdvisor
         {
             if (table_exists == false)
             {
-                createNewTable("NewTable");
-                return false;
-            } else
+                createNewTable("Database");
+                return true;
+            }
+            else
             {
                 return true;
             }
@@ -133,11 +134,13 @@ namespace RestaurantAdvisor
         {
             SqlConnection conn = connectToSQLDatabase();
             string tableName = "dbo." + newTableName;
-            string sql = "CREATE TABLE NewTable (" +
+            string sql = "CREATE TABLE @tableName (" +
                 "[Id] INT NOT NULL PRIMARY KEY IDENTITY, [Restaurant_Name] NVARCHAR(50), " +
                 "[Restaurant_Address] NVARCHAR(50), [Restaurant_Homepage] NVARCHAR(50), " +
                 "[Restaurant_Nationality] NVARCHAR(50))";
             SqlCommand cmd = new SqlCommand(sql, conn);
+            cmd.Parameters.Add(new SqlParameter("@tableName", tableName));
+            
             // cmd.Parameters.Add(new SqlParameter("@tableName", tableName));
             cmd.ExecuteNonQuery();
             closeSQLDatabaseConnection(conn);
@@ -149,46 +152,54 @@ namespace RestaurantAdvisor
         }
         private void addToSqlTable(string restaurantName, string restaurantAddress, string restaurantHomepage, string restaurantNationality)
         {
-            check_if_table_exists();
-            SqlConnection conn = connectToSQLDatabase();
+            table_exists = check_if_table_exists();
 
-            string sql = "INSERT INTO NewTable VALUES (@name, @address, @homepage, @nationality)";
-            SqlCommand cmd = new SqlCommand(sql, conn);
-            cmd.Parameters.Add(new SqlParameter("@name", restaurantName));
-            cmd.Parameters.Add(new SqlParameter("@address", restaurantAddress));
-            cmd.Parameters.Add(new SqlParameter("@homepage", restaurantHomepage));
-            cmd.Parameters.Add(new SqlParameter("@nationality", restaurantNationality));
-            SqlDataReader reader = cmd.ExecuteReader();
-            reader.Close();
+            if (table_exists == true)
+            {
+                SqlConnection conn = connectToSQLDatabase();
 
-            closeSQLDatabaseConnection(conn);
+                string sql = "INSERT INTO Database VALUES (name, address, homepage, nationality)";
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                cmd.Parameters.Add(new SqlParameter("@name", restaurantName));
+                cmd.Parameters.Add(new SqlParameter("@address", restaurantAddress));
+                cmd.Parameters.Add(new SqlParameter("@homepage", restaurantHomepage));
+                cmd.Parameters.Add(new SqlParameter("@nationality", restaurantNationality));
+                SqlDataReader reader = cmd.ExecuteReader();
+                reader.Close();
+
+                closeSQLDatabaseConnection(conn);
+            }
+            else
+            {
+                createNewTable("Database");
+            }
         }
-    }
 
-    /* Review of Dictionary, Lists, and MessageBoxes plus abbreviations/shortcuts 
-             * MessageBox.Show("We transferred the following data to the table: ");
-            MessageBox.Show($"Name: {restaurantName} \n" +
-                            $"Address: {restaurantAddress} \n " + 
-                            $"Homepage: {restaurantHomepage} \n" + 
-                            $"Nationality: {restaurantNationality}");
-            // ToDo: Continue here and create functionality
-            MessageBox.Show("Now I'll present you the entries of the list.");
-            List<string> list = new List<string>();
-            list.Add(restaurantName);
-            list.Add(restaurantAddress);
-            list.Add(restaurantHomepage);
-            list.Add(restaurantNationality);
-            foreach(string detail in list)
-            {
-                MessageBox.Show(detail);
-            }
-            MessageBox.Show("Now we'll move on to Dictionaries: ");
-            Dictionary<string, string> newDict = new Dictionary<string, string>();
-            newDict.Add("Movie A", "Romance");
-            newDict.Add("Movie B", "Lyrics");
-            foreach(KeyValuePair<string, string> item in newDict)
-            {
-                MessageBox.Show($"{item.Key}: {item.Value}");
-            }
-            */
+        /* Review of Dictionary, Lists, and MessageBoxes plus abbreviations/shortcuts 
+                 * MessageBox.Show("We transferred the following data to the table: ");
+                MessageBox.Show($"Name: {restaurantName} \n" +
+                                $"Address: {restaurantAddress} \n " + 
+                                $"Homepage: {restaurantHomepage} \n" + 
+                                $"Nationality: {restaurantNationality}");
+                // ToDo: Continue here and create functionality
+                MessageBox.Show("Now I'll present you the entries of the list.");
+                List<string> list = new List<string>();
+                list.Add(restaurantName);
+                list.Add(restaurantAddress);
+                list.Add(restaurantHomepage);
+                list.Add(restaurantNationality);
+                foreach(string detail in list)
+                {
+                    MessageBox.Show(detail);
+                }
+                MessageBox.Show("Now we'll move on to Dictionaries: ");
+                Dictionary<string, string> newDict = new Dictionary<string, string>();
+                newDict.Add("Movie A", "Romance");
+                newDict.Add("Movie B", "Lyrics");
+                foreach(KeyValuePair<string, string> item in newDict)
+                {
+                    MessageBox.Show($"{item.Key}: {item.Value}");
+                }
+                */
+    }
 }
