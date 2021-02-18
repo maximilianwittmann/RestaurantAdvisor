@@ -25,7 +25,7 @@ namespace RestaurantAdvisor
         private string homepageOfRestaurant;
         private string nationalityOfRestaurant;
 
-        bool table_exists = false;
+        bool table_exists = true;
 
         public string NameOfRestaurant
         {
@@ -81,6 +81,7 @@ namespace RestaurantAdvisor
             InitializeComponent();
         }
 
+
         public AddRestaurant(string aNameOfRestaurant, string aAddressOfRestaurant, string aHomepageOfRestaurant, string aNationalityOfRestaurant)
         {
             NameOfRestaurant = aNameOfRestaurant;
@@ -117,62 +118,46 @@ namespace RestaurantAdvisor
             MessageBox.Show("Database Connection was closed.");
         }
 
-        private bool check_if_table_exists()
+        private bool createNewTable()
         {
-            if (table_exists == false)
+            if (table_exists == true)
             {
-                createNewTable("Database");
                 return true;
-            }
+            } 
             else
             {
-                return true;
+                SqlConnection conn = connectToSQLDatabase();
+                // string name = "[dbo]." + "Database";
+                string sql = @"CREATE TABLE [dbo].NewTable ([Id] INT NOT NULL PRIMARY KEY IDENTITY, [Restaurant_Name] NVARCHAR(50), [Restaurant_Address] NVARCHAR(50), [Restaurant_Homepage] NVARCHAR(50),[Restaurant_Nationality] NVARCHAR(50))";
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                     
+                // cmd.Parameters.Add(new SqlParameter("@name", name));
+                cmd.ExecuteNonQuery();
+                closeSQLDatabaseConnection(conn);
+                MessageBox.Show($"New Table with name NewTable has been created");
+                table_exists = true;
+                return table_exists;
             }
-        }
-
-        private bool createNewTable(string newTableName)
-        {
-            SqlConnection conn = connectToSQLDatabase();
-            string tableName = "dbo." + newTableName;
-            string sql = "CREATE TABLE @tableName (" +
-                "[Id] INT NOT NULL PRIMARY KEY IDENTITY, [Restaurant_Name] NVARCHAR(50), " +
-                "[Restaurant_Address] NVARCHAR(50), [Restaurant_Homepage] NVARCHAR(50), " +
-                "[Restaurant_Nationality] NVARCHAR(50))";
-            SqlCommand cmd = new SqlCommand(sql, conn);
-            cmd.Parameters.Add(new SqlParameter("@tableName", tableName));
-            
-            // cmd.Parameters.Add(new SqlParameter("@tableName", tableName));
-            cmd.ExecuteNonQuery();
-            closeSQLDatabaseConnection(conn);
-            MessageBox.Show($"New Table with name {tableName} has been created");
-            table_exists = true;
-            return table_exists;
             // ToDo: Prevent that two tables called "NewTable" are in the database.
             // Populate New Table and read values
         }
         private void addToSqlTable(string restaurantName, string restaurantAddress, string restaurantHomepage, string restaurantNationality)
         {
-            table_exists = check_if_table_exists();
+            createNewTable();
+           
+            SqlConnection conn = connectToSQLDatabase();
 
-            if (table_exists == true)
-            {
-                SqlConnection conn = connectToSQLDatabase();
-
-                string sql = "INSERT INTO Database VALUES (name, address, homepage, nationality)";
-                SqlCommand cmd = new SqlCommand(sql, conn);
-                cmd.Parameters.Add(new SqlParameter("@name", restaurantName));
-                cmd.Parameters.Add(new SqlParameter("@address", restaurantAddress));
-                cmd.Parameters.Add(new SqlParameter("@homepage", restaurantHomepage));
-                cmd.Parameters.Add(new SqlParameter("@nationality", restaurantNationality));
-                SqlDataReader reader = cmd.ExecuteReader();
-                reader.Close();
+            string sql = "INSERT INTO NewTable VALUES (@name, @address, @homepage, @nationality)";
+            SqlCommand cmd = new SqlCommand(sql, conn);
+            cmd.Parameters.Add(new SqlParameter("@name", restaurantName));
+            cmd.Parameters.Add(new SqlParameter("@address", restaurantAddress));
+            cmd.Parameters.Add(new SqlParameter("@homepage", restaurantHomepage));
+            cmd.Parameters.Add(new SqlParameter("@nationality", restaurantNationality));
+            SqlDataReader reader = cmd.ExecuteReader();
+            reader.Close();
 
                 closeSQLDatabaseConnection(conn);
-            }
-            else
-            {
-                createNewTable("Database");
-            }
+                
         }
 
         /* Review of Dictionary, Lists, and MessageBoxes plus abbreviations/shortcuts 
