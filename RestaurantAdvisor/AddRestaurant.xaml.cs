@@ -20,60 +20,15 @@ namespace RestaurantAdvisor
     /// </summary>
     public partial class AddRestaurant : Window
     {
-        private string nameOfRestaurant;
-        private string addressOfRestaurant;
-        private string homepageOfRestaurant;
-        private string nationalityOfRestaurant;
-
         bool table_exists = true;
 
-        public string NameOfRestaurant
-        {
-            get
-            {
-                return nameOfRestaurant;
-            }
-            set
-            {
-                nameOfRestaurant = value;
-            }
-        }
+        public string NameOfRestaurant { get; set; }
 
-        public string AddressOfRestaurant
-        {
-            get
-            {
-                return addressOfRestaurant;
-            }
-            set
-            {
-                addressOfRestaurant = value;
-            }
-        }
+        public string AddressOfRestaurant { get; set; }
 
-        public string HomepageOfRestaurant
-        {
-            get
-            {
-                return homepageOfRestaurant;
-            }
-            set
-            {
-                homepageOfRestaurant = value;
-            }
-        }
+        public string HomepageOfRestaurant { get; set; }
 
-        public string NationalityOfRestaurant
-        {
-            get
-            {
-                return nationalityOfRestaurant;
-            }
-            set
-            {
-                nationalityOfRestaurant = value;
-            }
-        }
+        public string NationalityOfRestaurant { get; set; }
 
 
         public AddRestaurant()
@@ -101,6 +56,9 @@ namespace RestaurantAdvisor
 
         private void button2_Click(object sender, RoutedEventArgs e)
         {
+            SqlConnection conn = connectToSQLDatabase();
+            string sql = "SELECT Id, RestaurantName, RestaurantAddress, RestaurantHomepage, RestaurantNationality";
+            SqlCommand cmd = new SqlCommand(sql, conn);
 
         }
 
