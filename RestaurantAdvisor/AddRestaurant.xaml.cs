@@ -57,8 +57,14 @@ namespace RestaurantAdvisor
         private void button2_Click(object sender, RoutedEventArgs e)
         {
             SqlConnection conn = connectToSQLDatabase();
-            string sql = "SELECT Id, RestaurantName, RestaurantAddress, RestaurantHomepage, RestaurantNationality";
+            string sql = "SELECT * From NewTable";
             SqlCommand cmd = new SqlCommand(sql, conn);
+            SqlDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                MessageBox.Show($"{reader.GetValue(0).ToString()} | {reader.GetString(1)} | {reader.GetString(2)} | {reader.GetString(3)} | {reader.GetString(4)}");
+            }
+            closeSQLDatabaseConnection(conn);
 
         }
 
