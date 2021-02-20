@@ -51,7 +51,7 @@ namespace RestaurantAdvisor
             string restaurantAddress = textBox2.Text.ToString();
             string restaurantHomepage = textBox3.Text.ToString();
             string restaurantNationality = textBox4.Text.ToString();
-            addToSqlTable(restaurantName, restaurantAddress, restaurantHomepage, restaurantNationality); // ToDo: Continue here with creation of this method and sql table creation/population method
+            addToSqlTable(restaurantName, restaurantAddress, restaurantHomepage, restaurantNationality);
         }
 
         private void button2_Click(object sender, RoutedEventArgs e)
@@ -62,6 +62,8 @@ namespace RestaurantAdvisor
             SqlDataReader reader = cmd.ExecuteReader();
             while (reader.Read())
             {
+                // TODO Continue here: Fix bug: When entries of table are displayed and THEN user clicks on add new, and afterwards on view (button2), list displays multiple entries of the same content.
+                // listBox1.Items.Clear(); // I delete all items of this listbox on purpose. Otherwise we have redundant entries once new data is added by user
                 listBox1.Items.Add(($"{reader.GetValue(0).ToString()} | {reader.GetString(1)} | {reader.GetString(2)} | {reader.GetString(3)} | {reader.GetString(4)}"));
             }
             closeSQLDatabaseConnection(conn);
