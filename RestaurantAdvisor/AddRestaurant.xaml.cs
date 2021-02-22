@@ -51,6 +51,7 @@ namespace RestaurantAdvisor
             string restaurantAddress = textBox2.Text.ToString();
             string restaurantHomepage = textBox3.Text.ToString();
             string restaurantNationality = textBox4.Text.ToString();
+            listBox1.Items.Clear();
             addToSqlTable(restaurantName, restaurantAddress, restaurantHomepage, restaurantNationality);
         }
 
