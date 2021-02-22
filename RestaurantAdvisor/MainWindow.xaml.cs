@@ -27,8 +27,8 @@ namespace RestaurantAdvisor
 
         private void button1_Click(object sender, RoutedEventArgs e)
         {
-            SelectRestaurant selectRestaurant = new SelectRestaurant();
-            selectRestaurant.Show();
+            Orders orders = new Orders();
+            orders.Show();
         }
 
         private void button2_Click(object sender, RoutedEventArgs e)

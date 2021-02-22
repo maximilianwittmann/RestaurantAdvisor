@@ -68,7 +68,7 @@
                 </MenuItem>
                 <MenuItem Background="White">
                     <MenuItem.Icon>
-                        <Image Source="./Images/select.jpg" />
+                        <Image Source="./Images/orders.jpg" />
                     </MenuItem.Icon>
                     <MenuItem Header="_Save" InputGestureText="Ctrl + S" />
                     <MenuItem Header="Delete" />
@@ -122,7 +122,7 @@
             Orientation="Horizontal">
             <Image
                 x:Name="image1"
-                Source="./Images/select.jpg"
+                Source="./Images/orders.jpg"
                 Stretch="Uniform" />
             <Image
                 x:Name="image2"

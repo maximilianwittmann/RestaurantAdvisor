@@ -76,11 +76,11 @@
     <Compile Include="DeleteRestaurant.xaml.cs">
       <DependentUpon>DeleteRestaurant.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Orders.xaml.cs">
+      <DependentUpon>Orders.xaml</DependentUpon>
+    </Compile>
     <Compile Include="OtherAction.xaml.cs">
       <DependentUpon>OtherAction.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="SelectRestaurant.xaml.cs">
-      <DependentUpon>SelectRestaurant.xaml</DependentUpon>
     </Compile>
     <Page Include="AddRestaurant.xaml">
       <SubType>Designer</SubType>
@@ -102,11 +102,11 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="OtherAction.xaml">
+    <Page Include="Orders.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="SelectRestaurant.xaml">
+    <Page Include="OtherAction.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -145,12 +145,15 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>Database1.mdf</DependentUpon>
     </Content>
+    <Resource Include="Images\deleteOrder.jpg" />
+    <Resource Include="Images\newOrder.jpg" />
+    <Resource Include="Images\orderHistory.jpg" />
+    <Resource Include="Images\orders.jpg" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\add.jpg" />
     <Resource Include="Images\delete.jpg" />
     <Resource Include="Images\otheraction.jpg" />
-    <Resource Include="Images\select.jpg" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
