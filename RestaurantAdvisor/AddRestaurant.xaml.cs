@@ -124,7 +124,6 @@ namespace RestaurantAdvisor
             reader.Close();
 
                 closeSQLDatabaseConnection(conn);
-                
         }
 
         /* Review of Dictionary, Lists, and MessageBoxes plus abbreviations/shortcuts 
