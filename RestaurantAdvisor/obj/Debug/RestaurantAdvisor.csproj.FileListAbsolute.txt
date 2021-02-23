@@ -24,3 +24,5 @@ C:\Users\Admin\source\repos\maximilianwittmann\RestaurantAdvisor\RestaurantAdvis
 C:\Users\Admin\source\repos\maximilianwittmann\RestaurantAdvisor\RestaurantAdvisor\obj\Debug\RestaurantAdvisor_Content.g.cs
 C:\Users\Admin\source\repos\maximilianwittmann\RestaurantAdvisor\RestaurantAdvisor\obj\Debug\Orders.g.cs
 C:\Users\Admin\source\repos\maximilianwittmann\RestaurantAdvisor\RestaurantAdvisor\obj\Debug\Orders.baml
+C:\Users\Admin\source\repos\maximilianwittmann\RestaurantAdvisor\RestaurantAdvisor\obj\Debug\PlaceNewOrder.g.cs
+C:\Users\Admin\source\repos\maximilianwittmann\RestaurantAdvisor\RestaurantAdvisor\obj\Debug\PlaceNewOrder.baml

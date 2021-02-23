@@ -98,7 +98,7 @@
                     Height="40"
                     Background="White"
                     BorderBrush="Black"
-                    Click="button2_Click"
+                    Click="button3_Click"
                     Content="Go To" />
             </StackPanel>
         </StackPanel>

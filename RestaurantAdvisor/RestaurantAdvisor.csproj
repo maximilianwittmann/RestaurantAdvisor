@@ -110,8 +110,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="PlaceNewOrder.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="PlaceNewOrder.xaml.cs">
+      <DependentUpon>PlaceNewOrder.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -145,6 +152,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>Database1.mdf</DependentUpon>
     </Content>
+    <Resource Include="Images\addOrder.png" />
     <Resource Include="Images\deleteOrder.jpg" />
     <Resource Include="Images\newOrder.jpg" />
     <Resource Include="Images\orderHistory.jpg" />
