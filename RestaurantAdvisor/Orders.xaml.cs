@@ -26,7 +26,8 @@ namespace RestaurantAdvisor
 
         private void button1_Click(object sender, RoutedEventArgs e)
         {
-            
+            OrderHistory orderHistory = new OrderHistory();
+            orderHistory.Show();
         }
 
         private void button2_Click(object sender, RoutedEventArgs e)
