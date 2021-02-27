@@ -38,7 +38,8 @@ namespace RestaurantAdvisor
 
         private void button3_Click(object sender, RoutedEventArgs e)
         {
-
+            DeleteOrder deleteOrder = new DeleteOrder();
+            deleteOrder.Show();
         }
     }
 }

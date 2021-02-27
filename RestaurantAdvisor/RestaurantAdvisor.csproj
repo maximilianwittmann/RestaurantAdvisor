@@ -73,6 +73,9 @@
     <Compile Include="AddRestaurant.xaml.cs">
       <DependentUpon>AddRestaurant.xaml</DependentUpon>
     </Compile>
+    <Compile Include="DeleteOrder.xaml.cs">
+      <DependentUpon>DeleteOrder.xaml</DependentUpon>
+    </Compile>
     <Compile Include="DeleteRestaurant.xaml.cs">
       <DependentUpon>DeleteRestaurant.xaml</DependentUpon>
     </Compile>
@@ -86,6 +89,10 @@
       <DependentUpon>OtherAction.xaml</DependentUpon>
     </Compile>
     <Page Include="AddRestaurant.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DeleteOrder.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
