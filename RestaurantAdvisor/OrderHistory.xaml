@@ -12,21 +12,138 @@
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*" />
-            <ColumnDefinition Width="3*" />
+            <ColumnDefinition Width="15*" />
             <ColumnDefinition Width="1*" />
         </Grid.ColumnDefinitions>
 
         <Grid.RowDefinitions>
+            <RowDefinition Height="2*" />
             <RowDefinition Height="1*" />
             <RowDefinition Height="20*" />
+            <RowDefinition Height="3*" />
             <RowDefinition Height="1*" />
         </Grid.RowDefinitions>
 
+        <DockPanel
+            x:Name="dockPanel1"
+            Grid.RowSpan="2"
+            Grid.ColumnSpan="2">
+            <Menu
+                Grid.ColumnSpan="2"
+                Background="White"
+                DockPanel.Dock="Left">
+                <MenuItem
+                    x:Name="menuItem1"
+                    Margin="0,5,0,0"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    HorizontalContentAlignment="Center"
+                    VerticalContentAlignment="Center"
+                    Background="White"
+                    Click="menuItem1_Click"
+                    Header="Options">
+                    <MenuItem.Icon>
+                        <Image Width="20" Source="./Images/optionsOption.png" />
+                    </MenuItem.Icon>
+                    <MenuItem
+                        x:Name="menuItem1Item1"
+                        Background="Blue"
+                        Foreground="White"
+                        Header="Back to Main Window" />
+                    <Separator />
+                    <MenuItem
+                        x:Name="menuItem1Item4"
+                        Click="menuItem1Item4_Click"
+                        FontWeight="Bold"
+                        Header="Exit App" />
+                </MenuItem>
+            </Menu>
+        </DockPanel>
+
+        <TextBlock
+            x:Name="textBlock1"
+            Grid.Row="0"
+            Grid.Column="1"
+            Margin="119,2"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            FontSize="20"
+            FontWeight="Bold"
+            Text="Summary of all past orders" />
 
         <ListBox
             x:Name="listBox1"
-            Grid.Row="1"
+            Grid.Row="2"
             Grid.Column="1"
+            FontFamily="Baskerville Old face"
             FontSize="20" />
+
+        <Line
+            x:Name="line1"
+            Grid.Row="0"
+            Grid.Column="0"
+            Grid.ColumnSpan="4"
+            Stroke="Green"
+            StrokeThickness="2"
+            X1="0"
+            X2="900"
+            Y1="28"
+            Y2="28" />
+
+        <Line
+            x:Name="line2"
+            Grid.Row="3"
+            Grid.Column="1"
+            Grid.ColumnSpan="1"
+            Stroke="Black"
+            StrokeThickness="2"
+            X1="0"
+            X2="900"
+            Y1="3"
+            Y2="3" />
+
+        <Line
+            x:Name="line3"
+            Grid.Row="3"
+            Grid.Column="1"
+            Grid.ColumnSpan="1"
+            Stroke="Black"
+            StrokeThickness="2"
+            X1="0"
+            X2="900"
+            Y1="45"
+            Y2="45" />
+
+        <StackPanel
+            x:Name="stackPanel1"
+            Grid.Row="3"
+            Grid.Column="1"
+            Orientation="Horizontal">
+            <Button
+                x:Name="button1"
+                Width="350"
+                Margin="10,0,0,8"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Bottom"
+                Background="LightGreen"
+                BorderBrush="SaddleBrown"
+                Click="button1_Click"
+                Content="Display all past orders"
+                FontSize="20" />
+
+            <Button
+                x:Name="button2"
+                Width="245"
+                Margin="50,0,0,8"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Bottom"
+                Background="LightCoral"
+                BorderBrush="SaddleBrown"
+                Click="button2_Click"
+                Content="Delete specific order"
+                FontSize="20" />
+        </StackPanel>
+
+
     </Grid>
 </Window>

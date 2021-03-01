@@ -36,7 +36,6 @@ namespace RestaurantAdvisor
                 listBox1.Items.Add(($"{reader.GetValue(0).ToString()} | {reader.GetString(1)} | {reader.GetString(2)} | {reader.GetString(3)} | {reader.GetString(4)}"));
             }
             closeSQLDatabaseConnection(conn);
-
         }
 
         private SqlConnection connectToSQLDatabase()

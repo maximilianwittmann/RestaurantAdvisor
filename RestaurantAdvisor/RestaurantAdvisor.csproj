@@ -166,6 +166,8 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>Database1.mdf</DependentUpon>
     </Content>
+    <Resource Include="Images\closeOption.png" />
+    <Resource Include="Images\optionsOption.png" />
     <Resource Include="Images\addOrder.png" />
     <Resource Include="Images\deleteOrder.jpg" />
     <Resource Include="Images\newOrder.jpg" />

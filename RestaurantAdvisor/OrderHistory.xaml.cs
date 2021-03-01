@@ -23,9 +23,6 @@ namespace RestaurantAdvisor
         public OrderHistory()
         {
             InitializeComponent();
-            displayContent(); 
-            // ToDo: This method shall later be edited and not called in here 
-            //--> I just want to doublechek if the reading from a specific table and displaying of the entries works
         }
 
         private void displayContent()
@@ -54,6 +51,27 @@ namespace RestaurantAdvisor
         {
             conn.Close();
             MessageBox.Show("Database Connection was closed.");
+        }
+
+        private void button1_Click(object sender, RoutedEventArgs e)
+        {
+            displayContent();
+        }
+
+        private void button2_Click(object sender, RoutedEventArgs e)
+        {
+            DeleteOrder deleteOrder = new DeleteOrder();
+            deleteOrder.Show();
+        }
+
+        private void menuItem1Item4_Click(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
+
+        private void menuItem1_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
