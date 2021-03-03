@@ -15,10 +15,8 @@ C:\Users\Admin\source\repos\maximilianwittmann\RestaurantAdvisor\RestaurantAdvis
 C:\Users\Admin\source\repos\maximilianwittmann\RestaurantAdvisor\RestaurantAdvisor\obj\Debug\RestaurantAdvisor.pdb
 C:\Users\Admin\source\repos\maximilianwittmann\RestaurantAdvisor\RestaurantAdvisor\obj\Debug\AddRestaurant.g.cs
 C:\Users\Admin\source\repos\maximilianwittmann\RestaurantAdvisor\RestaurantAdvisor\obj\Debug\DeleteRestaurant.g.cs
-C:\Users\Admin\source\repos\maximilianwittmann\RestaurantAdvisor\RestaurantAdvisor\obj\Debug\OtherAction.g.cs
 C:\Users\Admin\source\repos\maximilianwittmann\RestaurantAdvisor\RestaurantAdvisor\obj\Debug\AddRestaurant.baml
 C:\Users\Admin\source\repos\maximilianwittmann\RestaurantAdvisor\RestaurantAdvisor\obj\Debug\DeleteRestaurant.baml
-C:\Users\Admin\source\repos\maximilianwittmann\RestaurantAdvisor\RestaurantAdvisor\obj\Debug\OtherAction.baml
 C:\Users\Admin\source\repos\maximilianwittmann\RestaurantAdvisor\RestaurantAdvisor\bin\Debug\Database1.mdf
 C:\Users\Admin\source\repos\maximilianwittmann\RestaurantAdvisor\RestaurantAdvisor\bin\Debug\Database1_log.ldf
 C:\Users\Admin\source\repos\maximilianwittmann\RestaurantAdvisor\RestaurantAdvisor\obj\Debug\RestaurantAdvisor_Content.g.cs

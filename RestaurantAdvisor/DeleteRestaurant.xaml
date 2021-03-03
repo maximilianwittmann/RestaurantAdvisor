@@ -10,7 +10,150 @@
     Height="450"
     mc:Ignorable="d">
     <Grid>
-        <TextBlock x:Name="textBlock1" 
-                   Text="Delete Restaurant" />
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.5*" />
+            <ColumnDefinition Width="5*" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="0.5*" />
+            <ColumnDefinition Width="0.1*" />
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.5*" />
+            <RowDefinition Height="4*" />
+            <RowDefinition Height="0.25*" />
+            <RowDefinition Height="0.5*" />
+            <RowDefinition Height="0.25*" />
+            <RowDefinition Height="0.5*" />
+            <RowDefinition Height="0.25*" />
+        </Grid.RowDefinitions>
+
+        <Button
+            x:Name="button1"
+            Grid.Row="3"
+            Grid.Column="1"
+            Width="400"
+            Background="LightGreen"
+            Click="button1_Click"
+            Content="Display All Restaurants"
+            FontSize="15"
+            FontWeight="Bold" />
+
+        <TextBlock
+            x:Name="textBlock1"
+            Grid.Row="0"
+            Grid.Column="1"
+            Grid.ColumnSpan="5"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            FontSize="20"
+            FontWeight="Bold"
+            Text="DELETE SPECIFIC RESTAURANT" />
+
+        <Line
+            x:Name="line1"
+            Grid.Row="0"
+            Grid.Column="0"
+            Grid.ColumnSpan="6"
+            Stroke="Green"
+            StrokeThickness="2"
+            X1="0"
+            X2="900"
+            Y1="28"
+            Y2="28" />
+
+        <Line
+            x:Name="line2"
+            Grid.Row="3"
+            Grid.Column="0"
+            Grid.ColumnSpan="6"
+            Margin="0,-20,0,0"
+            Stroke="Black"
+            StrokeThickness="2"
+            X1="0"
+            X2="900"
+            Y1="20"
+            Y2="20" />
+
+        <Line
+            x:Name="line3"
+            Grid.Row="3"
+            Grid.Column="0"
+            Grid.ColumnSpan="6"
+            Margin="0,2,0,0"
+            Stroke="Black"
+            StrokeThickness="2"
+            X1="0"
+            X2="900"
+            Y1="30"
+            Y2="30" />
+
+        <Label
+            x:Name="label1"
+            Grid.Row="5"
+            Grid.Column="1"
+            Width="400"
+            Padding="135,0,0,0"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            Content="Delete Where ID = "
+            FontSize="15"
+            FontWeight="Bold" />
+
+        <TextBox
+            x:Name="textBox1"
+            Grid.Row="5"
+            Grid.Column="2"
+            Width="80"
+            Margin="12,3,12,0"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            HorizontalContentAlignment="Center"
+            VerticalContentAlignment="Center"
+            FontSize="18"
+            FontStyle="Italic"
+            Text="Enter ID" />
+
+        <Button
+            x:Name="button2"
+            Grid.Row="5"
+            Grid.Column="3"
+            Background="Red"
+            Click="button2_Click"
+            Content="Delete"
+            FontWeight="ExtraBold" />
+
+        <ListBox
+            x:Name="listBox1"
+            Grid.Row="1"
+            Grid.Column="1"
+            Grid.ColumnSpan="4" />
+
+        <Line
+            x:Name="line4"
+            Grid.Row="5"
+            Grid.Column="0"
+            Grid.ColumnSpan="6"
+            Margin="0,2,0,0"
+            Stroke="Black"
+            StrokeThickness="2"
+            X1="0"
+            X2="900"
+            Y1="30"
+            Y2="30" />
+
+        <Line
+            x:Name="line5"
+            Grid.Row="5"
+            Grid.Column="0"
+            Grid.ColumnSpan="6"
+            Margin="0,-20,0,0"
+            Stroke="Black"
+            StrokeThickness="2"
+            X1="0"
+            X2="900"
+            Y1="20"
+            Y2="20" />
     </Grid>
 </Window>

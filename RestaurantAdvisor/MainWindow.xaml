@@ -126,18 +126,13 @@
                 Stretch="Uniform" />
             <Image
                 x:Name="image2"
-                Margin="15,0,0,0"
+                Margin="100,0,0,0"
                 Source="./Images/add.jpg"
                 Stretch="Uniform" />
             <Image
                 x:Name="image3"
-                Margin="15,0,0,0"
+                Margin="100,0,0,0"
                 Source="./Images/delete.jpg"
-                Stretch="Uniform" />
-            <Image
-                x:Name="image4"
-                Margin="15,0,0,0"
-                Source="./Images/otheraction.jpg"
                 Stretch="Uniform" />
         </StackPanel>
 
@@ -159,7 +154,7 @@
                 x:Name="button2"
                 Width="75"
                 Height="35"
-                Margin="47,-10,0,0"
+                Margin="135,-10,0,0"
                 Background="White"
                 BorderBrush="Black"
                 Click="button2_Click"
@@ -168,19 +163,10 @@
                 x:Name="button3"
                 Width="75"
                 Height="35"
-                Margin="47,-10,0,0"
+                Margin="135,-10,0,0"
                 Background="White"
                 BorderBrush="Black"
                 Click="button3_Click"
-                Content="Choose" />
-            <Button
-                x:Name="button4"
-                Width="75"
-                Height="35"
-                Margin="75,-10,0,0"
-                Background="White"
-                BorderBrush="Black"
-                Click="button4_Click"
                 Content="Choose" />
         </StackPanel>
 

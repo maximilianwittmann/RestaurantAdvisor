@@ -71,7 +71,8 @@ namespace RestaurantAdvisor
 
         private void menuItem1_Click(object sender, RoutedEventArgs e)
         {
-
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.Show();
         }
     }
 }

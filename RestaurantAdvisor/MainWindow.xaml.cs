@@ -43,11 +43,6 @@ namespace RestaurantAdvisor
             deleteRestaurant.Show();
         }
 
-        private void button4_Click(object sender, RoutedEventArgs e)
-        {
-            OtherAction otherAction = new OtherAction();
-            otherAction.Show();
-        }
 
         private void menuItem2Item2_Click(object sender, RoutedEventArgs e)
         {
