@@ -22,11 +22,13 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="0.5*" />
             <RowDefinition Height="4*" />
-            <RowDefinition Height="0.25*" />
+            <RowDefinition Height="0.1*" />
             <RowDefinition Height="0.5*" />
-            <RowDefinition Height="0.25*" />
+            <RowDefinition Height="0.1*" />
             <RowDefinition Height="0.5*" />
-            <RowDefinition Height="0.25*" />
+            <RowDefinition Height="0.1*" />
+            <RowDefinition Height="0.5*" />
+            <RowDefinition Height="0.1*" />
         </Grid.RowDefinitions>
 
         <Button
@@ -101,6 +103,18 @@
             FontSize="15"
             FontWeight="Bold" />
 
+        <Label
+            x:Name="label2"
+            Grid.Row="7"
+            Grid.Column="1"
+            Width="400"
+            Padding="70,0,0,0"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            Content="Delete ALL entries from Restaurant table"
+            FontSize="15"
+            FontWeight="Bold" />
+
         <TextBox
             x:Name="textBox1"
             Grid.Row="5"
@@ -119,8 +133,17 @@
             x:Name="button2"
             Grid.Row="5"
             Grid.Column="3"
-            Background="Red"
+            Background="Orange"
             Click="button2_Click"
+            Content="Delete"
+            FontWeight="ExtraBold" />
+
+        <Button
+            x:Name="button3"
+            Grid.Row="7"
+            Grid.Column="3"
+            Background="Red"
+            Click="button3_Click"
             Content="Delete"
             FontWeight="ExtraBold" />
 

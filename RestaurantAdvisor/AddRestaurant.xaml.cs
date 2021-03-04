@@ -20,8 +20,6 @@ namespace RestaurantAdvisor
     /// </summary>
     public partial class AddRestaurant : Window
     {
-        bool table_exists = true;
-
         public string NameOfRestaurant { get; set; }
 
         public string AddressOfRestaurant { get; set; }
@@ -83,33 +81,8 @@ namespace RestaurantAdvisor
             MessageBox.Show("Database Connection was closed.");
         }
 
-        private bool createNewTable()
-        {
-            if (table_exists == true)
-            {
-                return true;
-            } 
-            else
-            {
-                SqlConnection conn = connectToSQLDatabase();
-                // string name = "[dbo]." + "Database";
-                string sql = @"CREATE TABLE [dbo].NewTable ([Id] INT NOT NULL PRIMARY KEY IDENTITY, [Restaurant_Name] NVARCHAR(50), [Restaurant_Address] NVARCHAR(50), [Restaurant_Homepage] NVARCHAR(50),[Restaurant_Nationality] NVARCHAR(50))";
-                SqlCommand cmd = new SqlCommand(sql, conn);
-                     
-                // cmd.Parameters.Add(new SqlParameter("@name", name));
-                cmd.ExecuteNonQuery();
-                closeSQLDatabaseConnection(conn);
-                MessageBox.Show($"New Table with name NewTable has been created");
-                table_exists = true;
-                return table_exists;
-            }
-            // ToDo: Prevent that two tables called "NewTable" are in the database.
-            // Populate New Table and read values
-        }
         private void addToSqlTable(string restaurantName, string restaurantAddress, string restaurantHomepage, string restaurantNationality)
         {
-            createNewTable();
-           
             SqlConnection conn = connectToSQLDatabase();
 
             string sql = "INSERT INTO NewTable VALUES (@name, @address, @homepage, @nationality)";
@@ -121,7 +94,7 @@ namespace RestaurantAdvisor
             SqlDataReader reader = cmd.ExecuteReader();
             reader.Close();
 
-                closeSQLDatabaseConnection(conn);
+            closeSQLDatabaseConnection(conn);
         }
 
         /* Review of Dictionary, Lists, and MessageBoxes plus abbreviations/shortcuts 

@@ -74,5 +74,20 @@ namespace RestaurantAdvisor
             reader.Close();
             closeSQLDatabaseConnection(conn);
         }
+
+        private void button3_Click(object sender, RoutedEventArgs e)
+        {
+            listBox1.Items.Clear();
+            SqlConnection conn = connectToSQLDatabase();
+            string sql = "DELETE From NewTable";
+            SqlCommand cmd = new SqlCommand(sql, conn);
+            SqlDataReader reader = cmd.ExecuteReader();
+            reader.Close();
+            string sql2 = "DBCC CHECKIDENT ('NewTable', RESEED, 0)"; // This command makes sure that future values and entries to table will start from ID=1;
+            SqlCommand cmd2 = new SqlCommand(sql2, conn);
+            SqlDataReader reader2 = cmd2.ExecuteReader();
+            reader2.Close();
+            closeSQLDatabaseConnection(conn);
+        }
     }
 }
