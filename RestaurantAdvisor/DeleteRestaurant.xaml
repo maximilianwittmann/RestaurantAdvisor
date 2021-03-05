@@ -15,8 +15,8 @@
             <ColumnDefinition Width="5*" />
             <ColumnDefinition Width="1*" />
             <ColumnDefinition Width="1*" />
-            <ColumnDefinition Width="0.5*" />
-            <ColumnDefinition Width="0.1*" />
+            <ColumnDefinition Width="0.25*" />
+            <ColumnDefinition Width="0.25*" />
         </Grid.ColumnDefinitions>
 
         <Grid.RowDefinitions>
@@ -28,7 +28,7 @@
             <RowDefinition Height="0.5*" />
             <RowDefinition Height="0.1*" />
             <RowDefinition Height="0.5*" />
-            <RowDefinition Height="0.1*" />
+            <RowDefinition Height="0.5*" />
         </Grid.RowDefinitions>
 
         <Button
@@ -178,5 +178,17 @@
             X2="900"
             Y1="20"
             Y2="20" />
+
+        <Button
+            x:Name="button4"
+            Grid.Row="8"
+            Grid.Column="5"
+            Height="30"
+            Background="White"
+            BorderBrush="Black"
+            Click="button4_Click">
+            <Image Source="./Images/home.png" />
+
+        </Button>
     </Grid>
 </Window>

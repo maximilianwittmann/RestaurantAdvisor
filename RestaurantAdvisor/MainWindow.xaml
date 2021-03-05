@@ -12,11 +12,11 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="1*" />
-            <RowDefinition Height="50" />
-            <RowDefinition Height="50" />
-            <RowDefinition Height="50" />
+            <RowDefinition Height="0.5*" />
+            <RowDefinition Height="0.25*" />
+            <RowDefinition Height="1*" />
             <RowDefinition Height="2*" />
-            <RowDefinition Height="50" />
+            <RowDefinition Height="1*" />
             <RowDefinition Height="1*" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
@@ -30,52 +30,59 @@
                 <MenuItem
                     x:Name="menuItem1"
                     Background="White"
-                    Header="File">
+                    Header="Options">
+                    <MenuItem.Icon>
+                        <Image Source="./Images/optionsOption.png" />
+                    </MenuItem.Icon>
                     <MenuItem
                         x:Name="menuItem1Item1"
-                        Background="Black"
+                        Background="LightBlue"
                         Foreground="White"
-                        Header="New" />
+                        Header="Orders">
+                        <MenuItem
+                            x:Name="menuItem1Item1Item1"
+                            Background="White"
+                            Foreground="Black"
+                            Header="Order History" />
+                        <MenuItem
+                            x:Name="menuItem1Item1Item2"
+                            Background="White"
+                            Foreground="Black"
+                            Header="New Order" />
+                        <MenuItem
+                            x:Name="menuItem1Item1Item3"
+                            Background="White"
+                            Foreground="Black"
+                            Header="Delete Order" />
+                    </MenuItem>
+
                     <MenuItem
                         x:Name="menuItem1Item2"
-                        Background="Black"
+                        Background="LightGreen"
                         Foreground="White"
-                        Header="Open" />
+                        Header="Add Restaurant">
+                        <MenuItem
+                            x:Name="menuItem1Item2Item1"
+                            Background="White"
+                            Foreground="Black"
+                            Header="Add new Restaurant" />
+                    </MenuItem>
                     <MenuItem
                         x:Name="menuItem1Item3"
-                        Background="Black"
+                        Background="LightPink"
                         Foreground="White"
-                        Header="Save" />
+                        Header="Delete Restaurant">
+                        <MenuItem
+                            x:Name="menuItem1Item3Item1"
+                            Background="White"
+                            Foreground="Black"
+                            Header="Delete Restaurant" />
+                    </MenuItem>
                     <Separator />
                     <MenuItem
                         x:Name="menuItem1Item4"
                         FontWeight="Bold"
                         Header="Exit App" />
-                </MenuItem>
-                <MenuItem x:Name="menuItem2" Header="Tools">
-                    <MenuItem
-                        x:Name="menuItem2Item1"
-                        Background="Green"
-                        Header="Manage users">
-                        <MenuItem.Icon>
-                            <Image Width="20" Source="./Images/add.jpg" />
-                        </MenuItem.Icon>
-                    </MenuItem>
-                    <MenuItem
-                        x:Name="menuItem2Item2"
-                        Click="menuItem2Item2_Click"
-                        Header="ToDeletePage" />
-                </MenuItem>
-                <MenuItem Background="White">
-                    <MenuItem.Icon>
-                        <Image Source="./Images/orders.jpg" />
-                    </MenuItem.Icon>
-                    <MenuItem Header="_Save" InputGestureText="Ctrl + S" />
-                    <MenuItem Header="Delete" />
-                    <MenuItem
-                        Header="Show"
-                        IsCheckable="True"
-                        IsChecked="True" />
                 </MenuItem>
             </Menu>
         </DockPanel>
@@ -126,12 +133,12 @@
                 Stretch="Uniform" />
             <Image
                 x:Name="image2"
-                Margin="100,0,0,0"
+                Margin="80,0,0,0"
                 Source="./Images/add.jpg"
                 Stretch="Uniform" />
             <Image
                 x:Name="image3"
-                Margin="100,0,0,0"
+                Margin="70,0,0,0"
                 Source="./Images/delete.jpg"
                 Stretch="Uniform" />
         </StackPanel>
@@ -145,7 +152,7 @@
                 x:Name="button1"
                 Width="75"
                 Height="35"
-                Margin="17,-10,0,0"
+                Margin="25,-10,0,0"
                 Background="White"
                 BorderBrush="Black"
                 Click="button1_Click"
@@ -154,7 +161,7 @@
                 x:Name="button2"
                 Width="75"
                 Height="35"
-                Margin="135,-10,0,0"
+                Margin="125,-10,0,0"
                 Background="White"
                 BorderBrush="Black"
                 Click="button2_Click"
@@ -163,33 +170,28 @@
                 x:Name="button3"
                 Width="75"
                 Height="35"
-                Margin="135,-10,0,0"
+                Margin="120,-10,0,0"
                 Background="White"
                 BorderBrush="Black"
                 Click="button3_Click"
                 Content="Choose" />
         </StackPanel>
 
-        <Button
-            x:Name="button5"
-            Grid.Row="6"
-            Grid.Column="2"
-            Margin="15"
-            Content="About" />
-
         <Rectangle
             x:Name="rectangle1"
             Grid.Row="3"
-            Grid.RowSpan="3"
+            Grid.RowSpan="4"
             Grid.Column="1"
             Grid.ColumnSpan="2"
             Width="580"
-            Height="210"
+            Height="240"
             Margin="-30,0,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Stroke="Black"
             StrokeThickness="3" />
+
+
 
     </Grid>
 </Window>

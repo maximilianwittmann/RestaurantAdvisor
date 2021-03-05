@@ -55,5 +55,10 @@ namespace RestaurantAdvisor
             DeleteRestaurant deleteRestaurant = new DeleteRestaurant();
             deleteRestaurant.Show();
         }
+
+        private void MenuItem_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

@@ -14,6 +14,8 @@
             <ColumnDefinition Width="1*" />
             <ColumnDefinition Width="2*" />
             <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="0.25*" />
+
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="0.5*" />
@@ -21,14 +23,14 @@
             <RowDefinition Height="1*" />
             <RowDefinition Height="1*" />
             <RowDefinition Height="1*" />
-            <RowDefinition Height="0.25*" />
+            <RowDefinition Height="0.3*" />
         </Grid.RowDefinitions>
 
         <Line
             x:Name="line1"
             Grid.Row="1"
             Grid.Column="0"
-            Grid.ColumnSpan="3"
+            Grid.ColumnSpan="4"
             Margin="0,-12"
             Stroke="DarkGreen"
             StrokeThickness="5"
@@ -135,5 +137,17 @@
             FontSize="18"
             FontStyle="Italic"
             Text="Delete specific order(s)." />
+
+        <Button
+            x:Name="button4"
+            Grid.Row="8"
+            Grid.Column="5"
+            Height="30"
+            Background="White"
+            BorderBrush="Black"
+            Click="button4_Click">
+            <Image Source="./Images/home.png" />
+
+        </Button>
     </Grid>
 </Window>

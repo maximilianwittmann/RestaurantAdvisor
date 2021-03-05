@@ -41,5 +41,11 @@ namespace RestaurantAdvisor
             DeleteOrder deleteOrder = new DeleteOrder();
             deleteOrder.Show();
         }
+
+        private void button4_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.Show();
+        }
     }
 }

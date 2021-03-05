@@ -97,6 +97,12 @@ namespace RestaurantAdvisor
             closeSQLDatabaseConnection(conn);
         }
 
+        private void button3_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.Show();
+        }
+
         /* Review of Dictionary, Lists, and MessageBoxes plus abbreviations/shortcuts 
                  * MessageBox.Show("We transferred the following data to the table: ");
                 MessageBox.Show($"Name: {restaurantName} \n" +

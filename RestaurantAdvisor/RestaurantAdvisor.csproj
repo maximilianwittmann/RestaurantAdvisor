@@ -159,6 +159,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>Database1.mdf</DependentUpon>
     </Content>
+    <Resource Include="Images\home.png" />
     <Resource Include="Images\closeOption.png" />
     <Resource Include="Images\optionsOption.png" />
     <Resource Include="Images\addOrder.png" />
@@ -170,7 +171,6 @@
   <ItemGroup>
     <Resource Include="Images\add.jpg" />
     <Resource Include="Images\delete.jpg" />
-    <Resource Include="Images\otheraction.jpg" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">

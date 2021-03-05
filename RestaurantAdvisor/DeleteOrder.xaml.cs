@@ -74,5 +74,11 @@ namespace RestaurantAdvisor
             reader.Close();
             closeSQLDatabaseConnection(conn);
         }
+
+        private void button3_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.Show();
+        }
     }
 }
