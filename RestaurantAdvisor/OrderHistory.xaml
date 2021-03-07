@@ -24,42 +24,6 @@
             <RowDefinition Height="1*" />
         </Grid.RowDefinitions>
 
-        <DockPanel
-            x:Name="dockPanel1"
-            Grid.RowSpan="2"
-            Grid.ColumnSpan="2">
-            <Menu
-                Grid.ColumnSpan="2"
-                Background="White"
-                DockPanel.Dock="Left">
-                <MenuItem
-                    x:Name="menuItem1"
-                    Margin="0,5,0,0"
-                    HorizontalAlignment="Center"
-                    VerticalAlignment="Center"
-                    HorizontalContentAlignment="Center"
-                    VerticalContentAlignment="Center"
-                    Background="White"
-                    Click="menuItem1_Click"
-                    Header="Options">
-                    <MenuItem.Icon>
-                        <Image Width="20" Source="./Images/optionsOption.png" />
-                    </MenuItem.Icon>
-                    <MenuItem
-                        x:Name="menuItem1Item1"
-                        Background="Blue"
-                        Foreground="White"
-                        Header="Back to Main Window" />
-                    <Separator />
-                    <MenuItem
-                        x:Name="menuItem1Item4"
-                        Click="menuItem1Item4_Click"
-                        FontWeight="Bold"
-                        Header="Exit App" />
-                </MenuItem>
-            </Menu>
-        </DockPanel>
-
         <TextBlock
             x:Name="textBlock1"
             Grid.Row="0"

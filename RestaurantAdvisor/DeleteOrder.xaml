@@ -128,7 +128,8 @@
             x:Name="listBox1"
             Grid.Row="1"
             Grid.Column="1"
-            Grid.ColumnSpan="4" />
+            Grid.ColumnSpan="4"
+            MouseDoubleClick="listBox1_MouseDoubleClick" />
 
         <Line
             x:Name="line4"

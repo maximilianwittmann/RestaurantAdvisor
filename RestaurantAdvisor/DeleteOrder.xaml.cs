@@ -80,5 +80,38 @@ namespace RestaurantAdvisor
             MainWindow mainWindow = new MainWindow();
             mainWindow.Show();
         }
+
+        private void listBox1_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            string text = listBox1.SelectedItem.ToString(); 
+            // ToDo: Write a method that accepts the listBox selected Items as an Input and returns 
+            // only the ID as output; then pass to deleteID method
+            List<char> list1 = new List<char>(); // I will iterate through all elements of text string and add single chars to list1
+            foreach(char item in text)
+            {
+                for(int i = 0; i <= 2; i ++)
+                {
+                    list1.Add(item); // here I add only the first 2 chars to list1
+                }
+            }
+            foreach(char item in list1)
+            {
+                MessageBox.Show("This is the ID of the selected String: " + item);
+            }
+            
+            
+            /* for (int i = 0; i <= lengthInt; i++)
+            {
+                list1.Add(text[i]);
+            }
+            List<string> list2 = new List<string>();
+            list.Add("Joe");
+            list.Add("Sherril");
+            foreach (string name in list2)
+            {
+                MessageBox.Show(name);
+            } */
+            
+        }
     }
 }
